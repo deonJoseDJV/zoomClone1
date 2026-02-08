@@ -1,0 +1,173 @@
+/* Background */
+.lobbyWrapper {
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at 30% 30%, #1a1a1a, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Floating glass card */
+.lobbyCard {
+  width: 420px;
+  padding: 40px;
+  border-radius: 24px;
+  background: rgba(20, 20, 20, 0.75);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 60px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+}
+
+.lobbyCard h1 {
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Button */
+.connectBtn {
+  background: linear-gradient(135deg, #ff8c00, #ff3c00) !important;
+  font-weight: bold;
+  padding: 12px !important;
+  border-radius: 12px !important;
+}
+
+/* Video preview */
+.previewFrame {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid rgba(255,140,0,0.6);
+  box-shadow: 0 0 25px rgba(255,140,0,0.3);
+}
+
+.previewFrame video {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  background: black;
+}
+.controls {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 20px;
+  padding: 14px 26px;
+
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.1);
+
+  z-index: 9999;
+}
+.controls button {
+  color: #ddd;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  transition: 0.2s ease;
+}
+
+.controls button:hover {
+  color: white;
+  background: #ff8c00;
+  transform: scale(1.15);
+}
+.endCall {
+  background: #ff3c00 !important;
+  color: white !important;
+}
+.localVideo {
+  position: fixed;
+  bottom: 120px;
+  right: 30px;
+  width: 240px;
+  border-radius: 16px;
+  border: 2px solid #ff8c00;
+  box-shadow: 0 0 30px rgba(255,140,0,0.5);
+  z-index: 5;
+}
+.videoGrid {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.videoGrid video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* THIS is key */
+}
+
+
+.localVideo {
+  position: absolute;
+  bottom: 110px; /* 👈 keeps space for controls */
+  right: 20px;
+  width: 220px;
+  border-radius: 16px;
+  border: 2px solid #ff8c00;
+  box-shadow: 0 0 25px rgba(255,140,0,0.5);
+  z-index: 5;
+}
+.remoteVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.appContainer {
+  height: 100vh;
+  width: 100vw;
+  background: black;
+  position: relative;
+  overflow: hidden;
+}
+.controls button {
+  color: white;
+  transition: 0.2s ease;
+}
+
+.controls button:hover {
+  color: #ff8c00;
+  transform: scale(1.15);
+}
+.chatPanel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 320px;
+  height: 100vh;
+  background: rgba(15,15,15,0.95);
+  backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+.chatMessages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  color: white;
+}
+.chatInput {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.5);
+}
